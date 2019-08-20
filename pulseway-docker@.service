@@ -1,0 +1,13 @@
+[Unit]
+Description=Monitor Docker Container '%I'
+After=docker.service
+
+[Service]
+Type=simple
+ExecStart=/opt/pulseway-docker.sh %i
+Restart=always
+RestartSec=60
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
